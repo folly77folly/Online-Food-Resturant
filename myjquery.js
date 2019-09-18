@@ -42,6 +42,37 @@ return date_string
 	});
 
 	
+	$.ajax({
+		type: 'GET',
+		url:' http://localhost:3000/categories',
+		success:function(categories){
+			console.log('s',categories);
+			$.each(categories,function(i,categories){
+				// console.log(categories[catname]);
+			$categories.append('<option value='+categories["id"]+'>'+categories["catname"]+'</option>');
+			 })
+		},error :function(){
+			alert("error loading users");
+		}
+	});
+
+	$("#savedetails").click(function(){
+		var fname= $('#fname').val();
+		var lname= "aqim";
+		var email=$('#email').val();
+		var data={"first_name":fname,
+				"last_name":lname,
+				"email":email
+				}
+		$.ajax({
+			type:"POST",
+			url:'http://localhost:3000/users',
+			data:data,
+			success:function(users){
+				alert("users added");
+			}
+		});
+	});
 
 
 
