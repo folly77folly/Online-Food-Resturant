@@ -74,6 +74,77 @@ return date_string
 		});
 	});
 
+	$("#signUp").click(function(){
+		var email= $('#modalLRInput12').val();
+		var password= $('#modalLRInput13').val();
+		var passwordConfirm=$('#modalLRInput14').val();
+		if (email==""){
+			alert('Enter Email to Continue');
+		}else if (password==""){
+			alert('Enter Password to Continue');
+		}else if (passwordConfirm==""){
+			alert('Confirm Password to Continue');
+		}else if (passwordConfirm!==password){
+			alert('Your Password do not Match!!');
+		}else{
+			//do singup
+		var users={"email":email,
+		"password":password,
+		"role":"users"
+		}
+			$.ajax({
+				type:'POST',
+				url:'http://localhost:3000/users',
+				data:users,
+				success:function(){
+					alert(email+' your Profile is created successfully');
+					$('#modalLRInput12').val ="";
+					$('#modalLRInput13').val ="";
+					$('#modalLRInput14').val ="";
+					localStorage.setItem("email", email);
+					window.location.href='userdashboard.html'
+				},
+				error:function(){
+					alert('error creating your Profile');
+				}
+			})	
+		}
+	});
+
+
+	$("#signIn").click(function(){
+		var email= $('#modalLRInput10').val();
+		var password= $('#modalLRInput11').val();
+		if (email==""){
+			alert('Enter Email to Continue');
+		}else if (password==""){
+			alert('Enter Password to Continue');
+		}else{
+			//do singup
+			$.ajax({
+				type:'GET',
+				url:'http://localhost:3000/users?email='+email +'& password='+password,
+				success:function(users){
+					console.log(users);
+					console.log(users[0]["role"]);
+					if (users.length===1 && users[0]["role"]==="users"){
+					// alert('correct');
+					localStorage.setItem("email", email);
+					window.location.href = 'userdashboard.html'
+					}else if((users.length===1 && users[0]["role"]==="admin")){
+					localStorage.setItem("email", "ADMIN");
+					window.location.href = 'admin.html'
+					}
+					else{
+					alert('Incorrect Username or Password');
+					}
+				},
+				error:function(){
+					alert('error creating your Profile');
+				}
+			})	
+		}
+	});
 
 
 });

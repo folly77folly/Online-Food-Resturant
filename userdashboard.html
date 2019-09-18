@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dev Cafe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="mycss.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<body>
+<div class="container">
+	 <div class="row">
+	    <div class="col-8">
+			<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="opacity:0.8">
+			  <a class="navbar-brand" href="#">Navbar</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="nav-item active">
+			        <a class="nav-link navtext text-danger" href="#">Meals & Combos <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link navtext text-danger" href="#">Sides & Sauces</a>
+			      </li>
+			      <li class="nav-item ">
+			        <a class="nav-link navtext text-danger" href="#">Drinks</a>
+				  </li>			  
+			    </ul>
+			  </div>
+			  <div class="float-right mr-3">
+					<span><i class="fas fa-user fa-2x mr-2"></i><span id="useremail">abc</span>
+				  
+			  </div>
+			  <div class="float-right">
+				<button id ="logout" type="button" class="btn btn-outline-danger padding" data-toggle="modal" data-target="#modalLRForm">
+					Log-Out
+				</button>				  
+		  	</div>
+			</nav>
+		</div>
+		<div class="col-3">
+			
+		</div>
+	 </div>
+  <div class="row main">
+  	<div class="col">
+  		<p class="cat-head">Meals and Combos</p>
+  	</div>
+  </div>
+
+   <div id ="bigrow" class="row">
+    <!-- <div class="col">
+    	<a href="#" style="text-decoration: none" class="myelement">
+    	<div class="card" style="width: 18rem;">
+		  <img src="images/food1.png" class="card-img-top" alt="...">
+		  <div class="card-body">
+		    <p class="card-text">Naija 58 Meal.</p>
+		    <span>=N=1200</span><span>=N=1200</span>
+		  </div>
+		</div>
+		</a>
+    </div> -->
+    <!-- <div class="col"></div>
+    <div class="col">col</div>
+    <div class="col">col</div> -->
+  </div>
+  <!-- Content here -->
+   <div class="row main">
+  	<div class="col">
+  		<p class="cat-head">Sides and Sauces</p>
+  	</div>
+  </div>
+
+   <div id ="bigrow2" class="row">
+
+  </div>
+   <div class="row main">
+  	<div class="col">
+  		<p class="cat-head">Drinks</p>
+  	</div>
+  </div>
+
+   <div id ="bigrow3" class="row">
+
+	</div>
+</div>
+<div class="container-fluid" style="margin-top:5px">
+	<div class="row footer">
+		<div class="col-md">
+			1
+		</div>
+		<div class="col-md">
+			2
+		</div>
+		<div class="col-md">
+			3
+		</div>		
+		<div class="col-md">
+			4
+		</div>					
+	</div>
+</div>
+
+
+
+
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog cascading-modal" role="document">
+	  <!--Content-->
+	  <div class="modal-content">
+  
+		<!--Modal cascading tabs-->
+		<div class="modal-c-tabs">
+  
+		  <!-- Nav tabs -->
+		  <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+			<li class="nav-item">
+			  <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fas fa-user mr-1"></i>
+				Login</a>
+			</li>
+			<li class="nav-item">
+			  <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fas fa-user-plus mr-1"></i>
+				Register</a>
+			</li>
+		  </ul>
+  
+		  <!-- Tab panels -->
+		  <div class="tab-content">
+			<!--Panel 7-->
+			<div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+  
+			  <!--Body-->
+			  <div class="modal-body mb-1">
+				<div class="md-form form-sm mb-5">
+				  <i class="fas fa-envelope prefix"></i>
+				  <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+				  <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+				</div>
+  
+				<div class="md-form form-sm mb-4">
+				  <i class="fas fa-lock prefix"></i>
+				  <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+				  <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+				</div>
+				<div class="text-center mt-2">
+				  <button id ="signIn" class="btn btn-info">Log in <i class="fas fa-sign-in ml-1"></i></button>
+				</div>
+			  </div>
+			  <!--Footer-->
+			  <div class="modal-footer">
+				<div class="options text-center text-md-right mt-1">
+				  <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+				  <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+				</div>
+				<button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+			  </div>
+  
+			</div>
+			<!--/.Panel 7-->
+  
+			<!--Panel 8-->
+			<div class="tab-pane fade" id="panel8" role="tabpanel">
+  
+			  <!--Body-->
+			  <div class="modal-body">
+				<div class="md-form form-sm mb-5">
+				  <i class="fas fa-envelope prefix"></i>
+				  <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+				  <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+				</div>
+  
+				<div class="md-form form-sm mb-5">
+				  <i class="fas fa-lock prefix"></i>
+				  <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+				  <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+				</div>
+  
+				<div class="md-form form-sm mb-4">
+				  <i class="fas fa-lock prefix"></i>
+				  <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+				  <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+				</div>
+  
+				<div class="text-center form-sm mt-2">
+				  <button id="signUp" class="btn btn-info">Sign up <i class="fas fa-sign-in ml-1"></i></button>
+				</div>
+  
+			  </div>
+			  <!--Footer-->
+			  <div class="modal-footer">
+				<div class="options text-right">
+				  <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+				</div>
+				<button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+			  </div>
+			</div>
+			<!--/.Panel 8-->
+		  </div>
+  
+		</div>
+	  </div>
+	  <!--/.Content-->
+	</div>
+  </div>
+  <!--Modal: Login / Register Form-->
+  
+  <!-- <div class="text-center">
+	<a href="" class="btn btn-default btn-rounded my-3" data-toggle="modal" data-target="#modalLRForm">Launch
+	  Modal LogIn/Register</a>
+  </div> -->
+
+  <div class="modal" tabindex="-1" role="dialog">
+		<div class="modal-dialog" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title">Modal title</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+			  <p>Modal body text goes here.</p>
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+ <!-- Modal to view Food-->
+ <div class="modal fade" id="singlefood" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalCenterTitle">Place Your Order</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+				<div class="card mb-3" style="max-width: 540px;">
+						<div class="row no-gutters">
+						  <div class="col-md-4">
+							<img id="foodPic" src="..." class="card-img" alt="...">
+						  </div>
+						  <div class="col-md-8">
+							<div class="card-body">
+							  <h3 id="nameOfFood" class="card-title">Card title</h3>
+							  <span class="mr-1">&#8358;</span><span id="priceOfFood" class="card-title"></span>
+							  <input type="hidden" id="foodid">
+							  <p id="desOfFood"class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							  <span class="card-text">Quantity</span> <select id="qty" class="form-control">
+								  <option value="1">1</option>
+								  <option value="2">2</option>
+								  <option value="3">3</option>
+							  </select>
+							  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+							</div>
+						  </div>
+						</div>
+					  </div>
+
+			<!-- body -->
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button id ="submitorder" type="button" class="btn btn-danger">CheckOut</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- Modal to view food-->
+	
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="myjs.js"></script>
+<script type="text/javascript" src="myjquery.js"></script>
+
+<script>
+		$(document).ready(function(){
+			var email = localStorage.getItem("email");
+			var useremail = $('#useremail');
+			console.log(email);
+			useremail.html(email);
+
+			$.ajax({
+			type: 'GET',
+			url:'http://localhost:3000/menus?_sort=food_name&_order=asc',
+			success:function(menus){
+				console.log('success',menus);
+				$.each(menus,function(i,menus){
+				if (menus["categoryId"]===1){
+					// $('#bigrow').append('<div class="col-md-3"><div class="thumbnail"><img src="+ foods["price"] +"></div></div>');
+					$('#bigrow').append('<div class="col-md-3">\
+					<a id ='+menus["id"]+' class="showfood" href=# data-toggle=modal data-target=#singlefood style="text-decoration: none"><div class="card" style="width: 15rem;">\
+  					<img src="images/'+menus["picture_name"]+'" class="card-img-top foodlist" alt="...">\
+  					<div class="card-body">\
+					<p class="card-text cent">'+menus["food_name"]+'</p>\
+					<p class="card-text cent"><span class="mr-2">&#8358;</span>'+menus["price"]+'</p>\
+  					</div>\
+					</div></a>\
+					</div>');
+					//<img class="foodlist" src="images/'+foods["picture_name"]+'">\
+					// $foodList.append('<tr><td>'+foods["food_name"]+'<td><td>'+foods["price"]+'<td></tr>');					
+				}else if(menus["categoryId"]===2){
+					$('#bigrow2').append('<div class="col-md-3 ">\
+					<a style="text-decoration: none" id ='+menus["id"]+' class="showfood" href=# data-toggle=modal data-target=#singlefood><div class="card" style="width: 15rem;">\
+  					<img src="images/'+menus["picture_name"]+'" class="card-img-top foodlist" alt="...">\
+  					<div class="card-body">\
+					<p class="card-text cent">'+menus["food_name"]+'</p>\
+					<p class="card-text cent"><span class="mr-2">&#8358;</span>'+menus["price"]+'</p>\
+  					</div>\
+					</div></a>\
+					</div>');
+				}else{
+					$('#bigrow3').append('<div class="col-md-3 ">\
+					<a style="text-decoration: none" id ='+menus["id"]+' class="showfood" href=# data-toggle=modal data-target=#singlefood><div class="card" style="width: 15rem;">\
+  					<img src="images/'+menus["picture_name"]+'" class="card-img-top foodlist" alt="...">\
+  					<div class="card-body">\
+					<p class="card-text cent">'+menus["food_name"]+'</p>\
+					<p class="card-text cent"><span class="mr-2">&#8358;</span>'+menus["price"]+'</p>\
+  					</div>\
+					</div></a>\
+					</div>');					
+				}
+
+				})
+			},error :function(){
+				alert("error loading users");
+			}
+		});
+
+		});
+</script>
+
+</body>
+
+</html>
