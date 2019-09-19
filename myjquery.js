@@ -193,4 +193,133 @@ return date_string
 		}
 	});	
 
+
+	//this is to show all food
+	$('#showAllFoods').click(function(){
+		$.ajax({
+			type: 'GET',
+			url:'http://localhost:3000/menus?_sort=food_name&_order=asc',
+			success:function(menus){
+				console.log('success',menus);
+				$.each(menus,function(i,menus){
+					$foodList.append('<tr><td>'+menus["food_name"]+'<td><td>'+menus["price"]+'<td></tr>');
+				})
+			},error :function(){
+				alert("error loading users");
+			}
+		});
+
+	});
+
+
+	  ////this is to delete individual food
+	  $foodList.delegate('.viewdetails','click',function(){
+		// alert('Delete deatils');
+		$('#'+$(this).attr('data-id')).hide(1000);
+		$.ajax({
+			type: 'DELETE',
+			url:'http://localhost:3000/menus/'+ $(this).attr('data-id')
+
+		});
+	  })
+	  
+	  ////this is to view individual food
+	  $foodList.delegate('.edidetails','click',function(){
+		  var $nameOfFood=$('#nameOfFood')
+		  var $desOfFood=$('#desOfFood')
+		  var $foodPic=$('#foodPic')
+		  var $priceOfFood=$('#priceOfFood')
+		// alert('view deatils');
+		$.ajax({
+			type: 'GET',
+			url:'http://localhost:3000/menus/'+ $(this).attr('data-id'),
+			success:function(menus){
+				console.log(menus["food_name"]);
+				$nameOfFood.html(menus["food_name"]);
+				$desOfFood.html(menus["description"]);
+				$priceOfFood.html(menus["price"]);
+				$foodPic.attr('src',"images/"+menus["picture_name"]);
+			}
+
+		});
+	  })
+	  //view to edit food
+	  $foodList.delegate('.editFood','click',function(){
+		var $category=$('#categories');
+		var $nameOfFood=$('#foodName');
+		var $priceOfFood=$('#priceOfFood');
+		var $desOfFood=$('#description');
+		var $foodPic=$('#foodPic2');
+		var $picName=$('#avatar1');
+		var $foodid=$('#foodid');
+	  $.ajax({
+		  type: 'GET',
+		  url:'http://localhost:3000/menus/'+ $(this).attr('data-id'),
+		  success:function(menus){
+			  console.log(menus["price"]);
+			  $category.val(menus["categoryId"])
+			  $nameOfFood.val(menus["food_name"]);
+			  $foodid.val(menus["id"]);
+			  $priceOfFood.val(menus["price"]);
+			  $desOfFood.val(menus["description"]);
+			  $foodPic.attr('src',"images/"+menus["picture_name"]);
+		  }
+
+	  });
+	})
+
+
+	///to update a food
+	$("#updateFood").click(function(){
+		if(document.getElementById("avatar1").value != "") {
+			// you have a file
+			var fileName = document.getElementById('avatar1').files[0].name;
+		 }else{
+			var fileName ="default,jpeg";
+		 }
+		
+		var catid= $('#categories').val();
+		var foodName= $('#foodName').val();
+		var foodPrice=$('#priceOfFood').val();
+		var description=$('#description').val();
+		var pixPath=$('#avatar').val();
+		var dateAdded=Date.now();
+		var foodid=$('#foodid').val();
+		// alert(pixPath);
+		// alert(fileName);
+		if (catid==0){
+			alert('Select a category to continue');
+		}else if (foodName==""){
+			alert('Enter Food Name to Continue');
+		}else if (foodPrice=="" || isNaN(foodPrice)){
+			alert('Enter Price of the Food to Continue');
+		}else if (description==""){
+			alert('Enter description of the Food to Continue!!');
+		}else{
+		
+		var foodItem={"categoryId":catid,
+		"food_name":foodName,
+		"price":foodPrice,
+		"description":description,
+		"picture_name":fileName,
+		"created":mydate()
+		}
+			$.ajax({
+				type:'PATCH',
+				url:'http://localhost:3000/menus/'+foodid,
+				data:foodItem,
+				success:function(){
+					alert(foodName+' is Updated successfully');
+					window.location.href='search.html'
+				},
+				error:function(){
+					alert('error creating your Profile');
+				}
+			})	
+		}
+	});
+
+
+
+
 });
