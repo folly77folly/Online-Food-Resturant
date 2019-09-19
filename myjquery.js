@@ -147,4 +147,50 @@ return date_string
 	});
 
 
+
+
+	//This is where to add new food item
+
+	$("#submitFood").click(function(){
+		var fileName = document.getElementById('avatar').files[0].name;
+		var catid= $('#categories').val();
+		var foodName= $('#foodName').val();
+		var foodPrice=$('#foodPrice').val();
+		var description=$('#description').val();
+		var pixPath=$('#avatar').val();
+		var dateAdded=Date.now();
+		// alert(pixPath);
+		// alert(fileName);
+		if (catid==0){
+			alert('Select a category to continue');
+		}else if (foodName==""){
+			alert('Enter Food Name to Continue');
+		}else if (foodPrice=="" || isNaN(foodPrice)){
+			alert('Enter Correct Price of the Food to Continue');
+		}else if (description==""){
+			alert('Enter description of the Food to Continue!!');
+		}else{
+			//do singup
+		var foodItem={"categoryId":Number(catid),
+		"food_name":foodName,
+		"price":foodPrice,
+		"description":description,
+		"picture_name":fileName,
+		"created":mydate()
+		}
+			$.ajax({
+				type:'POST',
+				url:'http://localhost:3000/menus',
+				data:foodItem,
+				success:function(){
+					alert(foodName+' is created successfully');
+					window.location.href="admin.html";
+				},
+				error:function(){
+					alert('error creating your Profile');
+				}
+			})	
+		}
+	});	
+
 });
