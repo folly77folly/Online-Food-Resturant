@@ -322,4 +322,89 @@ return date_string
 
 
 
+
+	
+
+
+	//log-out users
+	$('#logout').click(function(){
+		// alert('show all');
+		localStorage.removeItem("email");
+		window.location.href = 'index.html'
+
+	});
+
+//// to select an orders
+	  $('#bigrow').delegate('.showfood','click',function(){
+		var $nameOfFood=$('#nameOfFood')
+		var $priceOfFood=$('#priceOfFood')
+		var $desOfFood=$('#desOfFood')
+		var $foodPic=$('#foodPic')
+		var $foodid=$('#foodid')
+		//   alert($(this).attr('id'))
+
+	  $.ajax({
+		  type: 'GET',
+		  url:'http://localhost:3000/menus/'+ $(this).attr('id'),
+		  success:function(menus){
+				$nameOfFood.html(menus["food_name"]);
+				$desOfFood.html(menus["description"]);
+				$priceOfFood.html(menus["price"]);
+				$foodid.val(menus["id"]);
+				$foodPic.attr('src',"images/"+menus["picture_name"]);
+		  }
+
+	  });
+	})
+
+	$('#bigrow2').delegate('.showfood','click',function(){
+		var $nameOfFood=$('#nameOfFood')
+		var $priceOfFood=$('#priceOfFood')
+		var $desOfFood=$('#desOfFood')
+		var $foodPic=$('#foodPic')
+		var $foodid=$('#foodid')
+		//   alert($(this).attr('id'))
+
+	  $.ajax({
+		  type: 'GET',
+		  url:'http://localhost:3000/menus/'+ $(this).attr('id'),
+		  success:function(menus){
+				$nameOfFood.html(menus["food_name"]);
+				$desOfFood.html(menus["description"]);
+				$priceOfFood.html(menus["price"]);
+				$foodid.val(menus["id"]);
+				$foodPic.attr('src',"images/"+menus["picture_name"]);
+		  }
+
+	  });
+	})
+
+
+
+	$('#bigrow3').delegate('.showfood','click',function(){
+		var $nameOfFood=$('#nameOfFood')
+		var $priceOfFood=$('#priceOfFood')
+		var $desOfFood=$('#desOfFood')
+		var $foodPic=$('#foodPic')
+		var $foodid=$('#foodid')
+		//   alert($(this).attr('id'))
+
+	  $.ajax({
+		  type: 'GET',
+		  url:'http://localhost:3000/menus/'+ $(this).attr('id'),
+		  success:function(menus){
+				$nameOfFood.html(menus["food_name"]);
+				$desOfFood.html(menus["description"]);
+				$priceOfFood.html(menus["price"]);
+				$foodid.val(menus["id"]);
+				$foodPic.attr('src',"images/"+menus["picture_name"]);
+		  }
+
+	  });
+	})
+
+
+
+
+
 });
