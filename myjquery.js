@@ -407,4 +407,33 @@ return date_string
 
 
 
+	$("#submitorder").click(function(){
+		// alert($('#qty option:selected').text())
+		var foodid= $('#foodid').val();
+		var unitPrice=$('#priceOfFood').text();
+		var qty=$('#qty option:selected').text();
+		var amount=Number(unitPrice)*qty;
+		var foodItem={"foodId":parseInt(foodid),
+		"unitprice":unitPrice,
+		"qty":qty,
+		"amount":amount,
+		"order_date":mydate()
+		}
+			$.ajax({
+				type:'POST',
+				url:'http://localhost:3000/orders',
+				data:foodItem,
+				success:function(){
+					alert('Your order is created successfully');
+					window.location.href='userdashboard.html'
+				},
+				error:function(){
+					alert('error creating your Profile');
+				}
+			})	
+		
+	});	
+
+
+
 });
