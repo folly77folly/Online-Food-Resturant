@@ -1,0 +1,155 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "Robert@yahoo.com",
+      "password": "Schwartz",
+      "role": "users"
+    },
+    {
+      "email": "dave@gmail.com",
+      "password": "12345",
+      "id": 2,
+      "role": "users"
+    },
+    {
+      "email": "aqim@email.com",
+      "password": "12345",
+      "id": 3,
+      "role": "admin"
+    },
+    {
+      "email": "esther@gmail.com",
+      "password": "esther",
+      "id": 4,
+      "role": "users"
+    },
+    {
+      "email": "aqim@gmail.com",
+      "password": "12345",
+      "id": 5,
+      "role": "users"
+    },
+    {
+      "email": "aqims@gmail.com",
+      "password": "123456",
+      "id": 5,
+      "role": "users"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "catname": "Meals & Combo"
+    },
+    {
+      "id": 2,
+      "catname": "Sides & Sauces"
+    },
+    {
+      "id": 3,
+      "catname": "Drinks"
+    }
+  ],
+  "menus": [
+    {
+      "categoryId": 3,
+      "food_name": "Coca-Cola",
+      "price": "100",
+      "description": "A bottle of 50cl coke",
+      "picture_name": "mineral-water-75cl_CR-2260006.jpg",
+      "created": "2019-09-17 15:41:12",
+      "id": 13
+    },
+    {
+      "categoryId": 3,
+      "food_name": "Monster",
+      "price": "9000",
+      "description": "A mouth watering Express Meal served with Chicken Pie and an option of Crispy Chips, Rice & Beans, Spicy or Fried Rice, Amma-Jamma Spagetti and a refreshing Pet Drink ",
+      "picture_name": "monster_1_2.png",
+      "created": "2019-09-19 13:29:31",
+      "id": 18,
+      "catid": "3"
+    },
+    {
+      "categoryId": 3,
+      "food_name": "Eva Water 50cl",
+      "price": "1700",
+      "description": "A mouth watering Express Meal served with Chicken Pie and an option of Crispy Chips, Rice & Beans, Spicy or Fried Rice, Amma-Jamma Spagetti and a refreshing Pet Drink ",
+      "picture_name": "mineral-water-75cl_CR-2260006.jpg",
+      "created": "2019-09-19 13:30:04",
+      "id": 19,
+      "catid": "3"
+    },
+    {
+      "categoryId": "1",
+      "food_name": "Crunchy Wings Meal",
+      "price": "1100",
+      "description": "4 mouth watering Pieces of Crunchy Wings served with an option of Crispy Chips, Rice & Beans, Spicy or Fried Rice and a refreshing Pet Drink ",
+      "picture_name": "citizens-meal-menu_2260012N2.jpg",
+      "created": "2019-09-20 02:37:51",
+      "id": 20
+    },
+    {
+      "categoryId": 1,
+      "food_name": "MEAL",
+      "price": "342423",
+      "description": "VDFGDFGGDGDGDFGDFGWEGWR\nWERGERGWERRW",
+      "picture_name": "zippy-burger-meal_221200011.jpg",
+      "created": "2019-09-19 13:48:03",
+      "id": 21
+    },
+    {
+      "categoryId": 1,
+      "food_name": "NAIJA COMBO",
+      "price": "23442342",
+      "description": "SDAFSAFSDFASD",
+      "picture_name": "meat-pie_2270004.jpg",
+      "created": "2019-09-19 13:50:25",
+      "id": 23
+    },
+    {
+      "categoryId": "2",
+      "food_name": "Grilled Chicken",
+      "price": "1200",
+      "description": "Meat Pie with Sausages inside",
+      "picture_name": "flame_grilled_chicken_.jpg",
+      "created": "2019-09-20 02:16:59",
+      "id": 24
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "menuId": 19,
+      "unitprice": "2123",
+      "qty": 2,
+      "amount": "20000",
+      "order_date": "2019-09-18 10:43:53"
+    },
+    {
+      "id": 2,
+      "menuId": 18,
+      "unitprice": "2123",
+      "qty": 2,
+      "amount": "200000",
+      "order_date": "2019-09-18 10:43:53"
+    },
+    {
+      "id": 3,
+      "menuId": 13,
+      "unitprice": "2123",
+      "qty": 2,
+      "amount": "20000",
+      "order_date": "2019-09-18 10:43:53"
+    },
+    {
+      "menuId": 13,
+      "unitprice": "100",
+      "qty": 1,
+      "amount": "100",
+      "order_date": "2019-09-19 09:56:03",
+      "id": 8
+    }
+  ]
+}

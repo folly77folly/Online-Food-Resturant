@@ -1,0 +1,32 @@
+		<div class="col-3" style="border: 1px solid black">
+				<a href="" data-toggle="modal" data-target="#exampleModalCenter"><i class="far fa-calendar-plus fa-10x"></i><br><span>Register New Food</span></a>
+		</div>
+		<div class="col-3" style="border: 1px solid black">
+				<a href=""><i class="fas fa-sort-amount-down-alt fa-10x"></i></i><br><span>View Orders</span></a>
+		</div>
+		<div class="col-3">
+				<a href="search.html"><i class="fas fa-edit fa-10x"></i><br><span>Edit Registered Food</span></a>
+		</div>
+		<div class="col-3">
+				<a href="search.html"><i class="fas fa-book-open fa-10x"></i><br><span>Show All Registred Foods</span></a>
+		</div>
+
+
+
+
+
+    <div class="row main">
+  	<div class="col">
+		  <p class="cat-head">Meals and Combos</p>
+		  	<nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+				  <li class="breadcrumb-item active" aria-current="page">Admin Dashboard</li>
+				</ol>
+			</nav>
+  	</div>
+  </div>
+
+
+
+
+         <p class="card-text">'+foods["description"]+'</p>\
