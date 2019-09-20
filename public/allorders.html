@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dev Cafe</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="mycss.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+
+<body>
+<div class="container">
+	 <div class="row">
+	    <div class="col">
+				<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" style="opacity:0.8">
+			  <a class="navbar-brand" href="#">Navbar</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNav">
+			    <ul class="navbar-nav">
+			      <li class="nav-item active">
+			        <a class="nav-link" href="#"data-toggle="modal" data-target="#exampleModalCenter">Add New Food <span class="sr-only">(current)</span></a>
+			      </li>
+			      <li class="nav-item">
+			        <a  class="nav-link" id ="showAllFoodss" href="search.html" >Show All Foods</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#">Show All Orders</a>
+				  </li>
+			    </ul>
+			  </div>
+			  <div class="float-right mr-3">
+					<span><i class="fas fa-user fa-2x mr-2"></i><span id="useremail">abc</span>
+				  
+			  </div>
+			  <div class="float-right">
+				<button id ="logout" type="button" class="btn btn-outline-danger padding" data-toggle="modal" data-target="#modalLRForm">
+					Log-Out
+				</button>				  
+			  </div>		  
+			</nav>
+	    </div>
+	 </div>
+  <div class="row main">
+  	<div class="col">
+		  <p class="cat-head">All Pending Orders</p>
+		  <nav aria-label="breadcrumb">
+				<ol class="breadcrumb">
+				  <li class="breadcrumb-item"><a href="admin.html">Admin Dashboard</a></li>
+				  <li class="breadcrumb-item active" aria-current="page">All Orders</li>
+				</ol>
+			</nav>
+  	</div>
+  </div>
+
+   <div class="row">
+    	<div class="col">
+			<table id ="foodList" class="table table-striped table-hover">
+				<thead class="thead-dark">
+				<tr>
+					<th>S/n</th>
+					<th>Food Name</th>
+					<th>Quantity</th>
+					<th>Amount</th>
+					<th>Order Date</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+				</thead>
+			</table>
+ 
+		</div>
+	
+	</div>
+<div class="container-fluid" style="margin-top:50px">
+	<div class="row footer">
+		<div class="col-md">
+			
+		</div>
+		<div class="col-md">
+			
+		</div>
+		<div class="col-md">
+			
+		</div>		
+		<div class="col-md">
+			
+		</div>					
+	</div>
+</div>
+
+
+ 
+  <!-- Modal to view Food-->
+  <div class="modal fade" id="singlefood" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+				<div class="card mb-3" style="max-width: 540px;">
+						<div class="row no-gutters">
+						  <div class="col-md-4">
+							<img id="foodPic" src="" class="card-img" alt="...">
+						  </div>
+						  <div class="col-md-8">
+							<div class="card-body">
+							  <h5 id="nameOfFood" class="card-title">Card title</h5>
+							  <p id="desOfFood"class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+							  <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+							</div>
+						  </div>
+						</div>
+					  </div>
+
+			<!-- body -->
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button id ="submitFood" type="button" class="btn btn-primary">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+  <!-- Modal to view food-->
+
+
+    <!-- Modal to edit Food-->
+	<div class="modal fade" id="editfood" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <h5 class="modal-title" id="exampleModalCenterTitle">Edit Food</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			  </button>
+			</div>
+			<div class="modal-body">
+					<div class="card mb-3" style="max-width: 540px;">
+							<div class="row no-gutters">
+							  <div class="col-md-5">
+								<img id="foodPic2" src=".." class="card-img" alt="picture of food">
+							  </div>
+							  <div class="col-md-7">
+								<div class="card-body">
+									<div class="form-group">
+										<label>Food Category</label>										
+										<select id="categories" class="form-control" placeholder="categories">
+										</select> 			
+									  </div>
+									  <div class="form-group">
+										<label>Food Name</label>
+										<input type="text" class="form-control" id="foodName" placeholder="Food Name">
+										<input type="hidden" id="foodid">
+									  </div> 
+									  <div class="form-group">							
+										<input type="text" class="form-control" id="priceOfFood" placeholder="Price">
+									  </div> 			  
+								</div>
+							  </div>
+							</div>
+							<div class="row no-gutters">
+								<div class="col-md">
+									<div class="form-group">									
+										<textarea id="description" class="form-control" placeholder="Description"></textarea>
+									</div> 
+									<div class="form-group">										
+										<input type="file" id="avatar1" accept="image/png, image/jpeg">
+									</div> 														 
+								</div>
+							</div>
+
+						  </div>
+	
+				<!-- body -->
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			  <button id ="updateFood" type="button" class="btn btn-primary">Save changes</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	  <!-- Modal to edit food-->
+
+
+
+	
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script type="text/javascript" src="myjs.js"></script>
+<script type="text/javascript" src="myjquery.js"></script>
+
+<script>
+	$(document).ready(function(){
+
+		var email = localStorage.getItem("email");
+	var useremail = $('#useremail');
+	useremail.html(email);
+
+		var $foodList=$('#foodList');
+		$(".someclass").remove();
+			$.ajax({
+				type: 'GET',
+				// url:'http://localhost:3000/orders?_sort=order_date&_order=asc',
+				url:'http://localhost:3000/orders?_expand=menu',
+				success:function(orders){
+					console.log('success',orders);
+					$.each(orders,function(i,orders){
+						k=i+1
+						$foodList.append('<tr class="someclass"><td>'+k+'</td><td>'+orders["menu"]["food_name"]+'</td><td>'+orders["qty"]+'</td><td>'+orders["amount"]+'</td><td>'+orders["order_date"]+'</td><td><button class="editFood btn btn-warning"data-toggle=modal data-target=#editfood data-id='+orders["amount"]+'>Edit</button></td><td><button class="viewdetails btn btn-danger" data-id='+orders["order_date"]+'>Remove Order</button></td></tr>');
+					})
+				},error :function(){
+					alert("error loading users");
+				}
+			});
+	});
+	</script>
+
+</body>
+
+</html>

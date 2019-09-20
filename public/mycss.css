@@ -1,0 +1,86 @@
+div{
+	/* border:1px solid black; */
+}
+
+body {
+ /* background-image: url("bg.jpeg"); */
+ background-color: white;
+ /*opacity: 0.5;*/
+}
+.cat-head{
+	background-color: red;
+	color: white;
+  padding: 5px;
+  text-align: center;
+}
+.imgfood{
+	height: 15em;
+	width :12em;
+	padding: 5px;
+}
+a {text-decoration: none;
+
+ }
+
+/* .navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}*/
+.main {
+  padding: 16px;
+  margin-top: 50px;
+  /*height: 1500px;  Used in this example to enable scrolling */
+}
+.footer {
+  height: 100px; 
+  background-color: silver;
+}
+
+.foodlist {
+  /* height: 150px;  */
+  width:200px
+}
+.homebg{
+  background-image: url('images/cook.jpg');
+  background-color: white;
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container
+  background-color: #cccccc; /* Used if the image is unavailable */
+  height: 400px; /* You must set a specified height */
+  /*opacity: 0.5;*/
+ }
+
+ .navtext{
+   color:red;
+   font-size: 20px;
+   text-decoration: none
+
+ }
+
+ .spacedivs{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.buttons {
+  display: block;
+  width: 215px;
+  height: 45px;
+  background: red;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none
+}
+a:link { color: #000000; text-decoration: none}
+
+.cent{
+  text-align: center;
+  font-weight:bold;
+  color: black;
+}
